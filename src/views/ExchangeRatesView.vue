@@ -1,0 +1,115 @@
+<template>
+<Navigation />
+<h2 class="display-4">Kursy walut</h2>
+<div v-for="item in array" :key="item.id" class="cards d-flex flex-wrap justify-content-center align-items-center">
+    <div v-for="i in item.rates" :key="i.id">
+<div class="card border-0 p-3 justify-content-between align-items-center" if="array.length">
+    <div class="card-body shadow">
+        <div class="d-flex justify-content-between">
+        <svg id='Money_Circulation_24' width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
+            <g transform="matrix(0.5 0 0 0.5 12 12)" >
+            <path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" translate(-25, -25)" d="M 25 5 C 13.966513 5 5 13.966513 5 25 C 4.994899710454515 25.360635916577568 5.184375296169332 25.696081364571608 5.495872849714331 25.877887721486516 C 5.80737040325933 26.059694078401428 6.192629596740671 26.059694078401428 6.50412715028567 25.877887721486516 C 6.815624703830668 25.696081364571608 7.005100289545485 25.360635916577568 7 25 C 7 15.047487 15.047487 7 25 7 C 31.245219 7 36.728098 10.179957 39.957031 15 L 34 15 C 33.63936408342243 14.994899710454515 33.303918635428396 15.184375296169332 33.122112278513484 15.495872849714331 C 32.94030592159857 15.80737040325933 32.94030592159857 16.192629596740673 33.122112278513484 16.50412715028567 C 33.303918635428396 16.815624703830668 33.63936408342243 17.005100289545485 34 17 L 41.761719 17 L 43 17 L 43 8 C 43.00370143373364 7.729699684396449 42.89782328543507 7.469413389385951 42.70649029658461 7.278448343881243 C 42.51515730773416 7.087483298376533 42.25466768994374 6.982106371676087 41.984375 6.9863281 C 41.432858843006734 6.994949173199649 40.9924473355562 7.448468177176025 41 7.999999999999999 L 41 13.009766 C 37.34915 8.1484512 31.538723 5 25 5 z M 24 14 L 24 16.085938 C 22.289927 16.358488 21.175796 17.299133 20.632812 18.246094 C 19.989714 19.367658 20 20.488281 20 20.488281 C 20 22.028623 20.807407 23.223794 21.824219 23.951172 C 22.84103 24.67855 24.037091 25.081489 25.154297 25.492188 C 26.271503 25.902884 27.304367 26.3192 27.972656 26.847656 C 28.640945 27.376112 29 27.910326 29 29 C 29 29 28.9935 29.724785 28.527344 30.470703 C 28.061145 31.216621 27.233333 32 25 32 C 22.833333 32 22.025274 31.06422 21.519531 30.052734 C 21.013788 29.041248 21 28 21 28 L 19 28 C 19 28 18.98621 29.458752 19.730469 30.947266 C 20.382589 32.251506 21.76244 33.612363 24 33.929688 L 24 36 L 26 36 L 26 33.943359 C 28.175871 33.690317 29.538333 32.624214 30.222656 31.529297 C 31.006457 30.275215 31 29 31 29 C 31 27.360674 30.234055 26.085247 29.214844 25.279297 C 28.195633 24.473346 26.978497 24.031662 25.845703 23.615234 C 24.712909 23.198807 23.65897 22.803997 22.988281 22.324219 C 22.317593 21.844441 22 21.42244 22 20.488281 C 22 20.488281 22.01029 19.864622 22.367188 19.242188 C 22.724089 18.619751 23.290667 18 25 18 C 26.666667 18 27.224726 18.68578 27.605469 19.447266 C 27.986212 20.208752 28 21 28 21 L 30 21 C 30 21 30.01379 19.791248 29.394531 18.552734 C 28.869824 17.503319 27.747793 16.40829 26 16.095703 L 26 14 L 24 14 z M 43.984375 23.986328 C 43.43285880343316 23.994949073062962 42.99244727987339 24.448468138368238 43 25 C 43 34.952513 34.952513 43 25 43 C 18.754258 43 13.271088 39.819768 10.042969 35 L 16 35.001953 C 16.360635916577568 35.00705328954548 16.696081364571608 34.81757770383067 16.877887721486516 34.50608015028567 C 17.059694078401428 34.19458259674067 17.059694078401428 33.80932340325933 16.877887721486516 33.49782584971433 C 16.696081364571608 33.186328296169336 16.360635916577568 32.99685271045452 16 33.001953 L 8.4453125 33 C 8.317633962195288 32.974839904111896 8.186272337804713 32.974839904111896 8.0585938 33 L 7 33 L 7 42 C 6.994899710454515 42.36063591657757 7.184375296169332 42.696081364571604 7.495872849714331 42.877887721486516 C 7.80737040325933 43.05969407840143 8.192629596740671 43.05969407840143 8.504127150285669 42.877887721486516 C 8.815624703830668 42.696081364571604 9.005100289545485 42.36063591657757 9 42 L 9 36.986328 C 12.649688 41.849109 18.459565 45 25 45 C 36.033487 45 45 36.033487 45 25 C 45.003701461010195 24.729699667173673 44.89782332475401 24.46941334607979 44.70649033286975 24.27844827870817 C 44.51515734098548 24.087483211336544 44.25466770753046 23.98210627103109 43.984375 23.986328 z" stroke-linecap="round" />
+            </g>
+            </svg>
+            <p class="badge">{{i.code}}</p>
+        </div>
+            <div class="d-flex justify-content-center align-items-center mt-3">
+                <h5 class="card-text card-text-sm">
+                    {{i.currency}}
+                </h5>
+                <div class="d-flex flex-column align-items-center justify-content-center">
+                    <p class="card-text text-center card-text-md fw-light">{{i.mid.toFixed(2)}}</p>
+                    <p class="lead card-text-sm text-center"><span class="badge p-2">Kupno</span></p>
+                </div>
+               <div class="d-flex flex-column align-items-center justify-content-center">
+                <p class="card-text text-center card-text-md fw-light">{{i.mid.toFixed(2)}}</p>
+                 <p class="lead text-center card-text-sm"><span class="badge p-2">Sprzedaz</span></p>
+            </div>
+            </div>
+        </div>
+    </div>
+        </div>
+      </div>
+<Footer />
+
+</template>
+<script>
+import Navigation from '../components/Navigation.vue'
+import Footer from '@/components/Footer.vue'
+export default {
+    components: {
+        Navigation, Footer
+    },
+data() {
+  return {
+      array: [],
+  }
+},
+mounted() {
+  fetch('http://api.nbp.pl/api/exchangerates/tables/a/')
+  .then(res => res.json())
+  .then(data => this.array = data)
+  .catch(err => console.log(err.message))
+    }
+}
+</script>
+
+<style scoped>
+.cards {
+    margin-top: 30px;
+}
+
+.card {
+min-width: 300px;
+background-color: #fffdf7;
+color: #001d3d;
+margin: 0 auto;
+}
+
+.card-text, .lead {
+    width: 100px;
+}
+
+.card-text-lg {
+font-size: 1.8rem;
+}
+
+.card-text-md {
+font-size: 1.6rem;
+}
+
+.card-text-sm{
+margin-top: -10px;
+font-size: 1.2rem;
+}
+
+.badge {
+background-color: #ffd60a;
+color:#001d3d;
+}
+
+h2 {
+    margin-top: 6rem;
+    color: #001d3d;
+    text-align: center;
+}
+
+svg {
+  width: 30px;
+  height: 30px;
+}
+
+@media  (max-width: 860px) {
+ .card {
+      width: 60%;
+      margin-bottom: 20px;
+  }
+}
+
+@media  (max-width: 760px) {
+   .card {
+      width: 80%;
+      margin-bottom: 20px;
+   }
+    }
+</style>
