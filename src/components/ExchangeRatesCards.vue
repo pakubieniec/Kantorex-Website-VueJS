@@ -129,6 +129,7 @@
 
 </template>
 <script>
+import useSWR, { preload } from 'svr';
 export default {
 data() {
   return {
@@ -136,10 +137,16 @@ data() {
   }
 },
 mounted() {
-  fetch('http://api.nbp.pl/api/exchangerates/tables/a/')
+    const fetcher = fetch('http://api.nbp.pl/api/exchangerates/tables/a/')
   .then(res => res.json())
   .then(data => this.array = data)
   .catch(err => console.log(err.message))
+
+  preload('/api/user', fetcher)
+
+//   profie() {
+//     const {data, error} = useSWR('/api/user', fetcher)
+//   }
 },
 }
 </script>
