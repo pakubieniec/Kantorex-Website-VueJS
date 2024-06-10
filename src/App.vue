@@ -1,12 +1,17 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HomeView from './views/HomeView.vue';
-const fetcher = fetch('http://api.nbp.pl/api/exchangerates/tables/a/')
-  .then(res => res.json())
-  .then(data => this.array = data)
-  .catch(err => console.log(err.message))
+import HomeView from './views/HomeView.vue'
+import useSWR from 'swr'
 
-  preload('/api/user', fetcher)
+function Profile() {
+  const { data, error, isLoading } = useSWR('/api/user', fetcher)
+ 
+  if (error) return <div>failed to load</div>
+  if (isLoading) return <div>loading...</div>
+  return <div>hello {data.name}!</div>
+}
+
+Profile()
 </script>
 
 <template>

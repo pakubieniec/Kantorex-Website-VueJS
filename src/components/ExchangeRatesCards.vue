@@ -143,7 +143,7 @@ mounted() {
   .catch(err => console.log(err.message))
 
   preload('/api/user', fetcher)
-
+  Profile()
 //   profie() {
 //     const {data, error} = useSWR('/api/user', fetcher)
 //   }
